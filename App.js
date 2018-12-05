@@ -1,23 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements';
+import Header from './components/header';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      <Header textIwant={'Hey there friend'} /> 
       <Avatar
         xlarge
         rounded
-        title='fight me'
-        source={{ url: 'https://i.imgur.com/1tpvNmh.jpg' }}
+        title='NS1'
       
       />
-        <Text>HELLO</Text>
+        <Text style={styles.bigblue}>HELLO</Text>
         <Text>WORLD!</Text>
         <Button 
         title='Hello' 
-        onPress={() => { console.log('happy'); }} 
+        onPress={() => { console.log('dont diu'); }} 
         color='red'
 
         />
@@ -32,5 +33,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
   },
 });
