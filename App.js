@@ -2,44 +2,95 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import Header from './components/header';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import Todo from './screens/todo';
+import Flexbox from './screens/Flexbox';
 
-export default class App extends React.Component {
+
+class App extends React.Component {
+
+  static navigationOptions = {
+    title: 'Main',
+  };
+
   render() {
     return (
-      <View style={styles.container}>
-      <Header textIwant={'Hey there friend'} /> 
-      <Avatar
-        xlarge
-        rounded
-        title='NS1'
       
-      />
-        <Text style={styles.bigblue}>HELLO</Text>
-        <Text>WORLD!</Text>
+      <View style={styles.outer}>
+      <Header textIwant={'much wow'} />
+      <View style={{ padding: 20 }} />
+      
+
+  <View style={styles.container}>
+  <Avatar
+  xlarge
+  rounded
+  source={{uri: "https://i.kym-cdn.com/entries/icons/mobile/000/013/564/doge.jpg" }}
+  onPress={() => console.log("Works!")}
+  activeOpacity={0.7}
+  />
+        <View style={{padding: 15 }}/>
+        <Text style={styles.smallblack}>HELLO</Text>
+        <Text style={styles.smallblack}>WORLD!</Text>
+        <View style={{padding: 15 }}/>
         <Button 
         title='Hello' 
         onPress={() => { console.log('dont diu'); }} 
-        color='red'
-
+        color='teal'
         />
-      </View>
+
+         <View style={{padding: 15 }} />
+         <Button
+          title="Go to TodoScreen"
+          onPress={() => this.props.navigation.navigate('TodoScreen')}
+          />
+        </View>
+
+        <View style={{padding: 15 }} />
+         <Button
+          title="Go to FlexboxScreen"
+          onPress={() => this.props.navigation.navigate('FlexboxScreen')}
+          />
+        </View>
+        
+      
     );
   }
 }
 
+
+const AppNavigator = createStackNavigator({
+  Home: App,
+  TodoScreen: Todo,
+  FlexboxScreen: Flexbox
+
+}, {
+  headerLayoutPreset: 'center'
+});
+
+
 const styles = StyleSheet.create({
+  outer: {
+   flex: 0.5,
+
+
+  },
   container: {
-    flex: 1,
+ //   flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  bigblue: {
-    color: 'blue',
+  smallblack: {
+    color: 'black',
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 20,
+    justifyContent: 'center',
   },
   red: {
     color: 'red',
   },
 });
+
+export default createAppContainer(AppNavigator);
+
