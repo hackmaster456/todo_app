@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                }}>
             <Button title={this.textIwant} 
             onPress={this.addNumberWhenPressed}
-            color='teal'
+            
          
             ></Button>
             </View>

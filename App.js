@@ -16,10 +16,11 @@ class App extends React.Component {
   render() {
     return (
       
+      <View style={styles.bgc}>
       <View style={styles.outer}>
       <Header textIwant={'much wow'} />
       <View style={{ padding: 20 }} />
-      
+      </View>
 
   <View style={styles.container}>
   <Avatar
@@ -34,9 +35,9 @@ class App extends React.Component {
         <Text style={styles.smallblack}>WORLD!</Text>
         <View style={{padding: 15 }}/>
         <Button 
-        title='Hello' 
+        title='Such Style' 
         onPress={() => { console.log('dont diu'); }} 
-        color='teal'
+        
         />
 
          <View style={{padding: 15 }} />
@@ -44,15 +45,15 @@ class App extends React.Component {
           title="Go to TodoScreen"
           onPress={() => this.props.navigation.navigate('TodoScreen')}
           />
-        </View>
+        
 
-        <View style={{padding: 15 }} />
+        <View style={{padding: 15}} />        
          <Button
           title="Go to FlexboxScreen"
           onPress={() => this.props.navigation.navigate('FlexboxScreen')}
           />
         </View>
-        
+        </View>
       
     );
   }
@@ -70,14 +71,17 @@ const AppNavigator = createStackNavigator({
 
 
 const styles = StyleSheet.create({
+  bgc: {
+    flex: 1,
+    backgroundColor: 'powderblue'
+  },
   outer: {
-   flex: 0.5,
+//   flex: 0.5,
 
 
   },
   container: {
- //   flex: 1,
-    backgroundColor: '#fff',
+//    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
