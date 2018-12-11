@@ -5,6 +5,7 @@ class FlexboxScreen extends React.Component{
 render(){
     return(
     <Text>Flexbox App</Text>
+    
     );  
 }
 
