@@ -5,6 +5,7 @@ import Header from './components/header';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Todo from './screens/todo';
 import Flexbox from './screens/Flexbox';
+import FinalProject from './screens/FinalProject';
 
 class App extends React.Component {
   static navigationOptions = {
@@ -34,7 +35,7 @@ class App extends React.Component {
           <View style={{ padding: 15 }} />
           <Text style={styles.smallblack}>HELLO</Text>
           <Text style={styles.smallblack}>WORLD!</Text>
-          <View style={{ padding: 15 }} />
+          <View style={{ padding: 10 }} />
           <Button
             title='Such Style'
             onPress={() => {
@@ -42,16 +43,22 @@ class App extends React.Component {
             }}
           />
 
-          <View style={{ padding: 15 }} />
+          <View style={{ padding: 10 }} />
           <Button
-            title='Go to TodoScreen'
+            title='Such TodoScreen'
             onPress={() => this.props.navigation.navigate('TodoScreen')}
           />
 
-          <View style={{ padding: 15 }} />
+          <View style={{ padding: 10 }} />
           <Button
-            title='Go to FlexboxScreen'
+            title='Many FlexboxScreen'
             onPress={() => this.props.navigation.navigate('FlexboxScreen')}
+          />
+
+          <View style={{ padding: 10 }} />
+          <Button
+            title='Final Project'
+            onPress={() => this.props.navigation.navigate('FinalProjectScreen')}
           />
         </View>
       </View>
@@ -63,7 +70,8 @@ const AppNavigator = createStackNavigator(
   {
     Home: App,
     TodoScreen: Todo,
-    FlexboxScreen: Flexbox
+    FlexboxScreen: Flexbox,
+    FinalProjectScreen: FinalProject
   },
   {
     headerLayoutPreset: 'center'
